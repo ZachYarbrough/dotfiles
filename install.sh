@@ -2,7 +2,7 @@
 
 create_symlinks () {
   # Creates symlinks for config files
-  ln -s ~/.dotfiles/.zshrc.symlink ~/.zshrc
+  ln -s ~/.dotfiles/zshrc.symlink ~/.zshrc
   ln -s ~/.dotfiles/git/gitconfig.symlink ~/.gitconfig
   ln -s ~/.dotfiles/git/gitconfig.local.symlink ~/.gitconfig.local
   
@@ -24,7 +24,7 @@ setup_brew_files () {
   -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   
   # Installs dependencies based on the Brewfile
-  brew bundle --file ~/.dotfiles/Brewfile
+  brew bundle --file ~/.dotfiles/homebrew/Brewfile
 }
 
 start_cron_jobs () {
