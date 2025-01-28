@@ -12,8 +12,7 @@ create_symlinks () {
   ln -s $HOME/.dotfiles/tmux $HOME/.config/tmux
 
   # Creates symlink for bash scripts
-  mkdir $HOME/bin
-  ln -s $HOME/.dotfiles/bin $HOME/bin
+  ln -s $HOME/.dotfiles/bin $HOME/
 }
 
 setup_brew_files () {

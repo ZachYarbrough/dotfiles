@@ -20,7 +20,8 @@ if [ -d "$1" ]; then
 	    # get the current date (i.e. 2025-01-31 12:31:34 AM)
 	    current_date=$(date "+%Y-%m-%d %H:%M:%S %p")
 	  
-	    # add, commit, and push to main
+	    # pull. add, commit, and push to main
+	    git pull origin main
 	    git add .
 	    git commit -m "Automatic backup @(${current_date})"
 	    git push origin main
