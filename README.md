@@ -18,5 +18,5 @@ git clone https://github.com/ZachYarbrough/dotfiles.git
 
 Run the below command to create symlinks in the Home directory for all config files in the repo as well as install homebrew and its dependencies.
 ```
-bash ~/.dotfiles/scripts/setup.sh
+bash ~/.dotfiles/install.sh
 ```
