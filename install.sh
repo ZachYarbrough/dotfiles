@@ -2,7 +2,7 @@
 
 create_symlinks () {
   # Creates symlinks for config files
-  ln -s ~/.dotfiles/zshrc.symlink ~/.zshrc
+  ln -s ~/.dotfiles/zsh/zshrc.symlink ~/.zshrc
   ln -s ~/.dotfiles/git/gitconfig.symlink ~/.gitconfig
   ln -s ~/.dotfiles/git/gitconfig.local.symlink ~/.gitconfig.local
   
