@@ -1,5 +1,5 @@
 # Zach's Dotfiles
-> I primarily work on a M2 Macbook Pro so all of my configs are geared towards the MacOS. I plan to eventually add instructions/setup for Windows, since I work with Windows at my day job.
+> I primarily work on a M2 Macbook Pro so all of my configs are geared towards the MacOS. I plan to eventually add instructions/setup for Windows as well.
 
 ## Installation for MacOS
 
