@@ -11,9 +11,7 @@ create_symlinks () {
   ln -s $HOME/.dotfiles/nvim $HOME/.config/nvim
   
   # Creates symlink for tmux directory
-  ln -s $HOME/.dotfiles/tmux $HOME/.tmux
-  mkdir $HOME/.config/tmux
-  ln -s $HOME/.dotfiles/tmux/tmux.conf.symlink $HOME/.config/tmux/tmux.conf
+  ln -s $HOME/.dotfiles/tmux $HOME/.config/tmux
 
   # Creates symlink for bash scripts
   mkdir $HOME/bin
