@@ -2,21 +2,21 @@
 
 create_symlinks () {
   # Creates symlinks for config files
-  ln -s ~/.dotfiles/zsh/zshrc.symlink ~/.zshrc
-  ln -s ~/.dotfiles/git/gitconfig.symlink ~/.gitconfig
-  ln -s ~/.dotfiles/git/gitconfig.local.symlink ~/.gitconfig.local
+  ln -s $HOME/.dotfiles/zsh/zshrc.symlink $HOME/.zshrc
+  ln -s $HOME/.dotfiles/git/gitconfig.symlink $HOME/.gitconfig
+  ln -s $HOME/.dotfiles/git/gitconfig.local.symlink $HOME/.gitconfig.local
   
   # Creates symlink for tmux directory
-  ln -s ~/.dotfiles/tmux ~/.tmux
-  ln -s ~/.dotfiles/tmux/tmux.conf.symlink ~/.tmux.conf
+  ln -s $HOME/.dotfiles/tmux/* $HOME/.tmux
+  ln -s $HOME/user/.dotfiles/tmux/tmux.conf.symlink $HOME/.tmux.conf
 
   # Creates symlink for nvim directory
-  mkdir ~/.config
-  ln -s ~/.dotfiles/nvim ~/.config/nvim
+  mkdir $HOME/.config
+  ln -s $HOME/.dotfiles/nvim/* $HOME/.config/nvim
 
   # Creates symlink for bash scripts
-  mkdir ~/bin
-  ln -s ~/.dotfiles/bin ~/bin
+  mkdir $HOME/bin
+  ln -s $HOME/.dotfiles/bin $HOME/bin
 }
 
 setup_brew_files () {
@@ -24,7 +24,7 @@ setup_brew_files () {
   -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   
   # Installs dependencies based on the Brewfile
-  brew bundle --file ~/.dotfiles/homebrew/Brewfile
+  brew bundle --file $HOME/.dotfiles/homebrew/Brewfile
 }
 
 start_cron_jobs () {
