@@ -6,11 +6,9 @@ create_symlinks () {
   ln -s $HOME/.dotfiles/git/gitconfig.symlink $HOME/.gitconfig
   ln -s $HOME/.dotfiles/git/gitconfig.local.symlink $HOME/.gitconfig.local
 
-  # Creates symlink for nvim directory
+  # Creates symlinks inside .config directory 
   mkdir $HOME/.config
   ln -s $HOME/.dotfiles/nvim $HOME/.config/nvim
-  
-  # Creates symlink for tmux directory
   ln -s $HOME/.dotfiles/tmux $HOME/.config/tmux
 
   # Creates symlink for bash scripts
