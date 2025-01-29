@@ -20,6 +20,8 @@ touch "${formatted_title}"
 
 # Inject Markdown content into the file
 echo "---" >> "${formatted_title}"
+echo "id: ${current_date}_${1// /-}" >> "${formatted_title}"
+echo "aliases: []" >> "${formatted_title}"
 echo "area: " >> "${formatted_title}" 
 echo "tags: []" >> "${formatted_title}" 
 echo "---" >> "${formatted_title}"

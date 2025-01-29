@@ -15,7 +15,8 @@ return {
       }
     },
     ui = {
-	enable = false,
+	enable = true,
+	bullets = { char = "-", hl_group = "ObsidianBullet" },
     },
   },
 }
