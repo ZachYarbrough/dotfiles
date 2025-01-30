@@ -1,6 +1,5 @@
 vim.opt.wrap = false
 vim.opt.shiftwidth = 4
-vim.opt.clipboard = 'unnamedplus'
 
 -- Allows obsidian.nvim to conceal certain markdown formatting
 vim.opt.conceallevel = 1
