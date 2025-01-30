@@ -22,3 +22,12 @@ export TERM=xterm-256color
 # Note Related Aliases
 alias nn='bash $HOME/bin/new-note.sh'
 alias pn='bash $HOME/bin/process-notes.sh'
+
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+plugins=(
+    git 
+    zsh-autosuggestions 
+    zsh-syntax-highlighting
+)
+source $ZSH/oh-my-zsh.sh
