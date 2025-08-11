@@ -1,28 +1,40 @@
-return {
-  'saghen/blink.cmp',
-  dependencies = 'rafamadriz/friendly-snippets',
+return { 
+    {
+	'saghen/blink.cmp',
+	dependencies = 'rafamadriz/friendly-snippets',
 
-  version = '*',
+	version = '*',
 
-  opts = {
-    keymap = { preset = 'default' },
+	opts = {
+	    keymap = { preset = 'default' },
 
-    completion = {
-	menu = {
-	    draw = {
-		treesitter = { "lsp" },
-	    }
+	    completion = {
+		menu = {
+		    draw = {
+			treesitter = { "lsp" },
+		    }
+		},
+		documentation = {
+		    auto_show = true,
+		    auto_show_delay_ms = 200,
+		},
+	    },
+	    appearance = {
+		use_nvim_cmp_as_default = true,
+		nerd_font_variant = 'mono'
+	    },
 	},
-	documentation = {
-	    auto_show = true,
-	    auto_show_delay_ms = 200,
-	},
+	opts_extend = { "sources.default" },
+	signature = { enable = true }
     },
-    appearance = {
-      use_nvim_cmp_as_default = true,
-      nerd_font_variant = 'mono'
-    },
-  },
-  opts_extend = { "sources.default" },
-  signature = { enable = true }
+    {
+	"kylechui/nvim-surround",
+	version = "^3.0.0", -- Use for stability; omit to use `main` branch for the latest features
+	event = "VeryLazy",
+	config = function()
+	    require("nvim-surround").setup({
+		-- Configuration here, or leave empty to use defaults
+	    })
+	end
+    }
 }
