@@ -19,9 +19,8 @@ PROMPT='%F{green}%m%f:%F{blue}%~%f${vcs_info_msg_0_} $ '
 
 export TERM=xterm-256color
 
-# Note Related Aliases
-alias nn='bash $HOME/bin/new-note.sh'
-alias pn='bash $HOME/bin/process-notes.sh'
+# Vim Alias
+alias vim='nvim'
 
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
