@@ -13,19 +13,7 @@ return {
 	config = function()
 	    local capabilities = require('blink.cmp').get_lsp_capabilities()
 	    local lspconfig = require('lspconfig')
-	    lspconfig.lua_ls.setup({ 
-		capabilities = capabilities,
-		settings = {
-		    Lua = {
-			diagnostics = {
-			    globals = { "vim" },
-			},
-			workspace = {
-			    library = vim.api.nvim_get_runtime_file("", true),
-			},
-		    },
-		},
-	    })
+	    lspconfig.lua_ls.setup({ capabilities = capabilities })
 	    lspconfig.ts_ls.setup({ capabilities = capabilities })
 
 	    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
@@ -36,7 +24,7 @@ return {
 	'williamboman/mason-lspconfig.nvim',
 	config = function()
 	    require('mason-lspconfig').setup({
-		ensure_installed = { 'lua_ls', 'ts_ls', 'tailwindcss' },
+		ensure_installed = { 'lua_ls', 'ts_ls', 'tailwindcss', 'omnisharp' },
 	    })
 	end
     }
