@@ -19,7 +19,6 @@ PROMPT='%F{green}%m%f:%F{blue}%~%f${vcs_info_msg_0_} $ '
 
 export TERM=xterm-256color
 
-# Vim Alias
 alias vim='nvim'
 
 # Standard plugins can be found in $ZSH/plugins/
@@ -29,4 +28,10 @@ plugins=(
     zsh-autosuggestions 
     zsh-syntax-highlighting
 )
+
 source $ZSH/oh-my-zsh.sh
+
+# Load fzf shell integration if installed
+if [ -f ~/.fzf.zsh ]; then
+  source ~/.fzf.zsh
+fi
