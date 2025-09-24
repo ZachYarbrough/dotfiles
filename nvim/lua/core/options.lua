@@ -11,9 +11,19 @@ vim.g.mapleader = ' '
 
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
 
--- Sets half-page scroll to center of page to avoid disorientation
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
+-- Moving visual selection
+vim.keymap.set("v", "J", ":m \'>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m \'<-2<CR>gv=gv")
+
+-- Keep cursor in the middle when jumping page blocks
+vim.keymap.set("n", "<C-D>", "<C-d>zz")
+vim.keymap.set("n", "<C-U>", "<C-u>zz")
+vim.keymap.set("n", "<C-d>", "10jzz")
+vim.keymap.set("n", "<C-u>", "10kzz")
+
+-- Keep cursor in the middle when searching
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
 
 
 -- Highlight yanked text for better visual feedback
