@@ -25,6 +25,11 @@ vim.keymap.set("n", "<C-u>", "10kzz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
+vim.cmd("filetype plugin indent on")
+
+vim.opt.autoindent = true
+vim.opt.smartindent = true
+
 
 -- Highlight yanked text for better visual feedback
 vim.api.nvim_create_autocmd('TextYankPost', {
