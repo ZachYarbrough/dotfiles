@@ -16,8 +16,6 @@ vim.keymap.set("v", "J", ":m \'>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m \'<-2<CR>gv=gv")
 
 -- Keep cursor in the middle when jumping page blocks
-vim.keymap.set("n", "<C-D>", "<C-d>zz")
-vim.keymap.set("n", "<C-U>", "<C-u>zz")
 vim.keymap.set("n", "<C-d>", "10jzz")
 vim.keymap.set("n", "<C-u>", "10kzz")
 

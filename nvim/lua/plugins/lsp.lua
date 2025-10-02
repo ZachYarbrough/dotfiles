@@ -27,8 +27,16 @@ return {
 		capabilities = capabilities
 	    })
 
+
+	    local project_root = vim.fn.getcwd()  -- current working directory
+
 	    vim.lsp.config('pyright', {
-		capabilities = capabilities
+		capabilities = capabilities,
+		settings = {
+		    python = {
+			pythonPath = project_root .. "/backend/.venv/bin/python"
+		    }
+		}
 	    })
 
 
