@@ -1,6 +1,6 @@
 return {
-    "ZachYarbrough/todo-list.nvim",
+    dir = "~/Documents/plugins/nvim/todo-list/",
     opts = {
-	line_number_mode = 'relative'
+	line_number_mode = "relative",
     }
 }
