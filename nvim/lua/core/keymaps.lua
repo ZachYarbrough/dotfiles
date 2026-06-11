@@ -14,8 +14,12 @@ vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
 
 -- Argument list (native Harpoon-like integration)
+-- TODO: args list is slow to load when running <leader>h, look into performance
 vim.keymap.set('n', '<leader>h', function()
-    vim.cmd.args()
+    local args = vim.fn.argv()
+    vim.ui.select(args, { prompt = 'Args: ' }, function(choice)
+        if choice then vim.cmd.edit(choice) end
+    end)
 end)
 
 vim.keymap.set('n', '<leader>ha', function()
@@ -52,8 +56,16 @@ end)
 -- fzf-lua
 vim.keymap.set('n', '<leader>ff', function()
     require('fzf-lua').files()
-end)
+end, { desc = 'Find files in current project' })
 
 vim.keymap.set('n', '<leader>fg', function()
     require('fzf-lua').live_grep()
-end)
+end, { desc = 'Grep for text in current project' })
+
+vim.keymap.set('n', '<leader>fo', function()
+    require('fzf-lua').oldfiles()
+end, { desc = 'Browse recently opened files' })
+
+vim.keymap.set('n', '<leader>f.', function()
+    require('fzf-lua').files({ cwd = '~/.dotfiles' })
+end, { desc = 'Find files in dotfiles directory' })
