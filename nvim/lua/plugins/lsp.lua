@@ -34,7 +34,14 @@ return {
 		capabilities = capabilities,
 		settings = {
 		    python = {
-			pythonPath = project_root .. "/backend/.venv/bin/python"
+			analysis = {
+			    -- Automatically finds virtual environments in the current working directory
+			    autoSearchPaths = true,
+			    useLibraryCodeForTypes = true,
+			    diagnosticMode = "workspace",
+			},
+			venvPath = vim.fn.getcwd(),
+			venv = ".venv",
 		    }
 		}
 	    })

@@ -26,12 +26,5 @@ return {
 	},
 	opts_extend = { "sources.default" },
 	signature = { enable = true }
-    },
-    {
-	"kylechui/nvim-surround",
-	event = "VeryLazy",
-	config = function()
-	    require("nvim-surround").setup({ })
-	end
     }
 }
