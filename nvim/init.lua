@@ -1,2 +1,26 @@
+
+vim.g.mapleader = ' '
+
+-- vim configs 
 require('core.options')
-require('core.lazy')
+require('core.keymaps')
+
+-- plugins
+vim.pack.add({
+    { src = "https://github.com/catppuccin/nvim", lazy = false, priority = 1000 },
+    { src = 'https://github.com/neovim/nvim-lspconfig' },
+    { src = 'https://github.com/ibhagwan/fzf-lua' },
+})
+
+-- color scheme
+vim.cmd.colorscheme "catppuccin-macchiato"
+
+-- lsp config
+vim.lsp.enable({ 'lua_ls', 'ts_ls', 'pyright' })
+
+-- fzf vim integration
+require('fzf-lua').setup({
+    defaults = {
+	formatter = 'path.dirname_first'
+    }
+})
