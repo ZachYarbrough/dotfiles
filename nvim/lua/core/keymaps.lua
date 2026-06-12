@@ -50,7 +50,7 @@ vim.keymap.set('n', '<leader>5', function()
     vim.cmd('silent! 5argument')
 end)
 
--- Plugin keymappings
+-- Plugin keymaps
 
 -- fzf-lua
 vim.keymap.set('n', '<leader>ff', function()
@@ -68,3 +68,10 @@ end, { desc = 'Browse recently opened files' })
 vim.keymap.set('n', '<leader>f.', function()
     require('fzf-lua').files({ cwd = '~/.dotfiles' })
 end, { desc = 'Find files in dotfiles directory' })
+
+-- gitsigns
+vim.keymap.set('n', '<leader>tb', function()
+    require('gitsigns').toggle_current_line_blame()
+end, { desc = 'Toggle git blame' })
+
+
