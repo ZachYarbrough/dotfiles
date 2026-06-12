@@ -14,8 +14,7 @@ vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
 
 -- Argument list (native Harpoon-like integration)
--- TODO: args list is slow to load when running <leader>h, look into performance
-vim.keymap.set('n', '<leader>h', function()
+vim.keymap.set('n', '<leader>hl', function()
     local args = vim.fn.argv()
     vim.ui.select(args, { prompt = 'Args: ' }, function(choice)
         if choice then vim.cmd.edit(choice) end

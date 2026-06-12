@@ -9,6 +9,9 @@ vim.cmd("filetype plugin indent on")
 vim.opt.autoindent = true
 vim.opt.smartindent = true
 
+-- Netrw Explorer
+vim.g.netrw_liststyle = 3
+
 -- Enable virtual text for in-line lsp warnings/errors
 vim.diagnostic.config({
     virtual_text = true
