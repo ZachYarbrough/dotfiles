@@ -14,7 +14,7 @@ vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
 
 -- Argument list (native Harpoon-like integration)
-vim.keymap.set('n', '<leader>hl', function()
+vim.keymap.set('n', '<C-h>', function()
     local args = vim.fn.argv()
     vim.ui.select(args, { prompt = 'Args: ' }, function(choice)
         if choice then vim.cmd.edit(choice) end
