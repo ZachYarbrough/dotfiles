@@ -26,17 +26,20 @@ require('fzf-lua').setup({
     }
 })
 
+-- git integration 
 require('gitsigns').setup({
-  signs = {
-    add = { text = '+' },
-    change = { text = '~' },
-    changedelete = { text = '±' },
-    untracked = { text = '?' },
-  },
-  signs_staged = {
-    add = { text = '+' },
-    change = { text = '~' },
-    changedelete = { text = '±' },
-    untracked = { text = '?' },
-  }
+    current_line_blame = true,
+
+    signs = {
+	add = { text = '+' },
+	change = { text = '~' },
+        changedelete = { text = '±' },
+	untracked = { text = '?' },
+    },
+    signs_staged = {
+	add = { text = '+' },
+	change = { text = '~' },
+	changedelete = { text = '±' },
+        untracked = { text = '?' },
+    }
 })

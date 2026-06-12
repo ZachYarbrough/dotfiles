@@ -74,4 +74,7 @@ vim.keymap.set('n', '<leader>tb', function()
     require('gitsigns').toggle_current_line_blame()
 end, { desc = 'Toggle git blame' })
 
+vim.keymap.set('n', '<leader>hp', function()
+    require('gitsigns').preview_hunk()
+end, { desc = 'Toggle git blame' })
 
