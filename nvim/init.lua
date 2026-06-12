@@ -23,6 +23,9 @@ vim.lsp.enable({ 'lua_ls', 'ts_ls', 'pyright' })
 require('fzf-lua').setup({
     defaults = {
 	formatter = 'path.dirname_first'
+    },
+    fzf_colors = {
+	["pointer"] = "-1",
     }
 })
 
