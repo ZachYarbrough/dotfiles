@@ -16,9 +16,6 @@ vim.pack.add({
 -- color scheme
 vim.cmd.colorscheme "catppuccin-macchiato"
 
--- lsp config
-vim.lsp.enable({ 'lua_ls', 'ts_ls', 'pyright' })
-
 -- fzf integration
 require('fzf-lua').setup({
     defaults = {
