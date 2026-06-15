@@ -24,7 +24,7 @@ require('fzf-lua').setup({
     },
     winopts = {
 	-- Shrink and move window to bottom left of screen
-	width = 0.40,
+	width = 0.50,
 	height = 0.35,
 
 	row = 1.0,
