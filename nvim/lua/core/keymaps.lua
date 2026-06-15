@@ -70,11 +70,22 @@ vim.keymap.set('n', '<leader>f.', function()
 end, { desc = 'Find files in dotfiles directory' })
 
 -- gitsigns
+vim.keymap.set('n', '<leader>ts', function()
+    require('gitsigns').toggle_signs()
+end, { desc = 'Toggle git signs' })
+
 vim.keymap.set('n', '<leader>tb', function()
     require('gitsigns').toggle_current_line_blame()
 end, { desc = 'Toggle git blame' })
 
-vim.keymap.set('n', '<leader>hp', function()
-    require('gitsigns').preview_hunk()
-end, { desc = 'Toggle git blame' })
+vim.keymap.set('n', '<leader>gd', function()
+    require('gitsigns').diffthis()
+end, { desc = 'Compare local changes with last commit' })
 
+vim.keymap.set('n', '<leader>gp', function()
+    require('gitsigns').preview_hunk()
+end, { desc = 'Preview hunk changes' })
+
+vim.keymap.set('n', '<leader>gn', function()
+    require('gitsigns').next_hunk()
+end, { desc = 'Go to next hunk' })
