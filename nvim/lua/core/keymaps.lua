@@ -24,23 +24,23 @@ vim.keymap.set('n', '<leader>ad', function()
 end)
 
 vim.keymap.set('n', '<leader>1', function()
-    vim.cmd('silent! 1argument')
-end)
-
-vim.keymap.set('n', '<leader>2', function()
     vim.cmd('silent! 2argument')
 end)
 
-vim.keymap.set('n', '<leader>3', function()
+vim.keymap.set('n', '<leader>2', function()
     vim.cmd('silent! 3argument')
 end)
 
-vim.keymap.set('n', '<leader>4', function()
+vim.keymap.set('n', '<leader>3', function()
     vim.cmd('silent! 4argument')
 end)
 
-vim.keymap.set('n', '<leader>5', function()
+vim.keymap.set('n', '<leader>4', function()
     vim.cmd('silent! 5argument')
+end)
+
+vim.keymap.set('n', '<leader>5', function()
+    vim.cmd('silent! 6argument')
 end)
 
 -- LSP keymaps
