@@ -14,12 +14,12 @@ vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
 
 -- Argument list (native Harpoon-like integration)
-vim.keymap.set('n', '<leader>ha', function()
+vim.keymap.set('n', '<leader>aa', function()
     vim.cmd('argadd %')
     vim.cmd('argdedup')
 end)
 
-vim.keymap.set('n', '<leader>hd', function()
+vim.keymap.set('n', '<leader>ad', function()
     vim.cmd('argdelete %')
 end)
 
@@ -45,6 +45,11 @@ end)
 
 -- LSP keymaps
 vim.keymap.set('n', 'gh', vim.lsp.buf.hover, { desc = 'View quick definition' })
+
+-- Love2D keymaps
+vim.keymap.set('n', '<leader>vr', function()
+    vim.cmd('silent! !love .')
+end)
 
 -- Plugin keymaps
 
