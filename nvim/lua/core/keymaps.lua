@@ -14,13 +14,6 @@ vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
 
 -- Argument list (native Harpoon-like integration)
-vim.keymap.set('n', '<C-h>', function()
-    local args = vim.fn.argv()
-    vim.ui.select(args, { prompt = 'Args: ' }, function(choice)
-        if choice then vim.cmd.edit(choice) end
-    end)
-end)
-
 vim.keymap.set('n', '<leader>ha', function()
     vim.cmd('argadd %')
     vim.cmd('argdedup')
@@ -50,6 +43,9 @@ vim.keymap.set('n', '<leader>5', function()
     vim.cmd('silent! 5argument')
 end)
 
+-- LSP keymaps
+vim.keymap.set('n', 'gh', vim.lsp.buf.hover, { desc = 'View quick definition' })
+
 -- Plugin keymaps
 
 -- fzf-lua
@@ -64,6 +60,14 @@ end, { desc = 'Grep for text in current project' })
 vim.keymap.set('n', '<leader>fo', function()
     require('fzf-lua').oldfiles()
 end, { desc = 'Browse recently opened files' })
+
+vim.keymap.set('n', '<leader>fb', function()
+    require('fzf-lua').buffers()
+end, { desc = 'Browse open buffers' })
+
+vim.keymap.set('n', '<leader>fa', function()
+    require('fzf-lua').args()
+end, { desc = 'Browse argslist' })
 
 vim.keymap.set('n', '<leader>f.', function()
     require('fzf-lua').files({ cwd = '~/.dotfiles' })
@@ -81,10 +85,6 @@ end, { desc = 'Toggle git signs' })
 vim.keymap.set('n', '<leader>tb', function()
     require('gitsigns').toggle_current_line_blame()
 end, { desc = 'Toggle git blame' })
-
-vim.keymap.set('n', '<leader>gd', function()
-    require('gitsigns').diffthis()
-end, { desc = 'Compare local changes with last commit' })
 
 vim.keymap.set('n', '<leader>gp', function()
     require('gitsigns').preview_hunk()
