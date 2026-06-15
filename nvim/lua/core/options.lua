@@ -16,7 +16,24 @@ vim.opt.winborder = "rounded"
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
--- LSP Config
+vim.lsp.config('lua_ls', {
+    -- Root markers ensure it matches your game folders cleanly
+    root_markers = { 'main.lua', '.git' },
+    settings = {
+        Lua = {
+            runtime = {
+                version = 'LuaJIT'
+            },
+            workspace = {
+                checkThirdParty = false,
+                library = {
+                    "${3rd}/love2d/library",
+                },
+            },
+        }
+    }
+})
+
 vim.lsp.enable({ 'lua_ls', 'ts_ls', 'pyright' })
 
 -- Configures the behavior of the insert mode completion menu

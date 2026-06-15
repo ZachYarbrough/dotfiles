@@ -48,8 +48,28 @@ vim.keymap.set('n', 'gh', vim.lsp.buf.hover, { desc = 'View quick definition' })
 
 -- Plugin keymaps
 
--- fzf-lua
+--------------------------------------
+-- gitsigns
+--------------------------------------
+vim.keymap.set('n', '<leader>ts', function()
+    require('gitsigns').toggle_signs()
+end, { desc = 'Toggle git signs' })
 
+vim.keymap.set('n', '<leader>tb', function()
+    require('gitsigns').toggle_current_line_blame()
+end, { desc = 'Toggle git blame' })
+
+vim.keymap.set('n', '<leader>gp', function()
+    require('gitsigns').preview_hunk()
+end, { desc = 'Preview hunk changes' })
+
+vim.keymap.set('n', '<leader>gn', function()
+    require('gitsigns').next_hunk()
+end, { desc = 'Go to next hunk' })
+
+--------------------------------------
+-- fzf-lua
+--------------------------------------
 -- Options for centering the fzf window
 local expanded_opts = {
     winopts = {
@@ -97,20 +117,3 @@ vim.keymap.set('n', '<leader>gt', function()
 	previewer = 'git_diff',
     }))
 end, { desc = 'View git status' })
-
--- gitsigns
-vim.keymap.set('n', '<leader>ts', function()
-    require('gitsigns').toggle_signs()
-end, { desc = 'Toggle git signs' })
-
-vim.keymap.set('n', '<leader>tb', function()
-    require('gitsigns').toggle_current_line_blame()
-end, { desc = 'Toggle git blame' })
-
-vim.keymap.set('n', '<leader>gp', function()
-    require('gitsigns').preview_hunk()
-end, { desc = 'Preview hunk changes' })
-
-vim.keymap.set('n', '<leader>gn', function()
-    require('gitsigns').next_hunk()
-end, { desc = 'Go to next hunk' })
