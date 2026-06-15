@@ -19,13 +19,16 @@ vim.cmd.colorscheme "catppuccin-macchiato"
 -- fzf integration
 require('fzf-lua').setup({
     defaults = {
+	previewer = false,
 	formatter = 'path.dirname_first'
     },
     winopts = {
-	preview = {
-	    layout = 'vertical',
-	    vertical = 'up:70%'
-	}
+	-- Shrink and move window to bottom left of screen
+	width = 0.40,
+	height = 0.35,
+
+	row = 1.0,
+	col = 0.0
     },
     files = {
 	fzf_opts = {

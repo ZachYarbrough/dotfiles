@@ -10,6 +10,8 @@ vim.cmd("filetype plugin indent on")
 vim.opt.autoindent = true
 vim.opt.smartindent = true
 
+vim.opt.winborder = "rounded"
+
 -- Ignore case on search, unless typing uppercase characters 
 vim.opt.ignorecase = true
 vim.opt.smartcase = true

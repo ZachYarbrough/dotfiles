@@ -49,12 +49,27 @@ vim.keymap.set('n', 'gh', vim.lsp.buf.hover, { desc = 'View quick definition' })
 -- Plugin keymaps
 
 -- fzf-lua
+
+-- Options for centering the fzf window
+local expanded_opts = {
+    winopts = {
+	fullscreen = true,
+	preview = {
+	    layout = 'vertical',
+	    vertical = 'up:70%'
+	}
+    }
+
+}
+
 vim.keymap.set('n', '<leader>ff', function()
     require('fzf-lua').files()
 end, { desc = 'Find files in current project' })
 
 vim.keymap.set('n', '<leader>fg', function()
-    require('fzf-lua').live_grep()
+    require('fzf-lua').live_grep(vim.tbl_extend('force', expanded_opts, {
+	previewer = 'builtin',
+    }))
 end, { desc = 'Grep for text in current project' })
 
 vim.keymap.set('n', '<leader>fo', function()
@@ -73,8 +88,14 @@ vim.keymap.set('n', '<leader>f.', function()
     require('fzf-lua').files({ cwd = '~/.dotfiles' })
 end, { desc = 'Find files in dotfiles directory' })
 
+vim.keymap.set('n', '<leader>fh', function()
+    require('fzf-lua').help_tags()
+end, { desc = 'Browse neovim\'s documentation' })
+
 vim.keymap.set('n', '<leader>gt', function()
-    require('fzf-lua').git_status()
+    require('fzf-lua').git_status(vim.tbl_extend('force', expanded_opts, {
+	previewer = 'git_diff',
+    }))
 end, { desc = 'View git status' })
 
 -- gitsigns
