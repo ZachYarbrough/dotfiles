@@ -21,6 +21,18 @@ require('fzf-lua').setup({
     defaults = {
 	formatter = 'path.dirname_first'
     },
+    winopts = {
+	preview = {
+	    layout = 'vertical',
+	    vertical = 'up:70%'
+	}
+    },
+    files = {
+	fzf_opts = {
+	    ['--exact'] = '',
+	    ['--no-sort'] = ''
+	}
+    },
     fzf_colors = {
 	["pointer"] = "-1",
     }

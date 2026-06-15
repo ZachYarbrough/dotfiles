@@ -69,6 +69,10 @@ vim.keymap.set('n', '<leader>f.', function()
     require('fzf-lua').files({ cwd = '~/.dotfiles' })
 end, { desc = 'Find files in dotfiles directory' })
 
+vim.keymap.set('n', '<leader>gt', function()
+    require('fzf-lua').git_status()
+end, { desc = 'View git status' })
+
 -- gitsigns
 vim.keymap.set('n', '<leader>ts', function()
     require('gitsigns').toggle_signs()
