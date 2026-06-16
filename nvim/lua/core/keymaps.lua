@@ -115,7 +115,14 @@ vim.keymap.set('n', '<leader>gt', function()
 end, { desc = 'View git status' })
 
 vim.keymap.set('n', '<leader>gb', function()
-    require('fzf-lua').git_branches()
+    require('fzf-lua').git_branches({
+	winopts = {
+	    preview = {
+		layout = 'vertical',
+		vertical = 'up:70%'
+	    }
+	}
+    })
 end, { desc = 'View git branches' })
 
 --diagnostics
