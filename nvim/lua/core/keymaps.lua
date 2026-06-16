@@ -54,97 +54,98 @@ end)
 -- Plugin keymaps
 
 --------------------------------------
--- gitsigns
+-- gitsigns 
 --------------------------------------
+local function gitsigns()
+    return require('gitsigns')
+end
+
 vim.keymap.set('n', '<leader>ts', function()
-    require('gitsigns').toggle_signs()
+    gitsigns().toggle_signs()
 end, { desc = 'Toggle git signs' })
 
 vim.keymap.set('n', '<leader>tb', function()
-    require('gitsigns').toggle_current_line_blame()
+    gitsigns().toggle_current_line_blame()
 end, { desc = 'Toggle git blame' })
 
 vim.keymap.set('n', '<leader>gp', function()
-    require('gitsigns').preview_hunk()
+    gitsigns().preview_hunk()
 end, { desc = 'Preview hunk changes' })
 
 vim.keymap.set('n', '<leader>gn', function()
-    require('gitsigns').next_hunk()
+    gitsigns().next_hunk()
 end, { desc = 'Go to next hunk' })
 
 --------------------------------------
 -- fzf-lua
 --------------------------------------
--- Options for centering the fzf window
+local function fzf()
+    return require('fzf-lua')
+end
+
+local preview_opts = {
+    layout = 'vertical',
+    vertical = 'up:70%'
+}
+
 local expanded_opts = {
     winopts = {
-	fullscreen = true,
-	preview = {
-	    layout = 'vertical',
-	    vertical = 'up:70%'
-	}
+        fullscreen = true,
+        preview = preview_opts
     }
-
 }
 
 -- files
 vim.keymap.set('n', '<leader>ff', function()
-    require('fzf-lua').files()
+    fzf().files()
 end, { desc = 'Find files in current project' })
 
 vim.keymap.set('n', '<leader>fo', function()
-    require('fzf-lua').oldfiles()
+    fzf().oldfiles()
 end, { desc = 'Browse recently opened files' })
 
 vim.keymap.set('n', '<leader>f.', function()
-    require('fzf-lua').files({ cwd = '~/.dotfiles' })
+    fzf().files({ cwd = '~/.dotfiles' })
 end, { desc = 'Find files in dotfiles directory' })
 
 -- grep
 vim.keymap.set('n', '<leader>fg', function()
-    require('fzf-lua').live_grep(vim.tbl_extend('force', expanded_opts, {
+    fzf().live_grep(vim.tbl_extend('force', expanded_opts, {
 	previewer = 'builtin',
     }))
 end, { desc = 'Grep for text in current project' })
 
 -- git
 vim.keymap.set('n', '<leader>gt', function()
-    require('fzf-lua').git_status(vim.tbl_extend('force', expanded_opts, {
+    fzf().git_status(vim.tbl_extend('force', expanded_opts, {
 	previewer = 'git_diff',
     }))
 end, { desc = 'View git status' })
 
 vim.keymap.set('n', '<leader>gb', function()
-    require('fzf-lua').git_branches({
-	winopts = {
-	    preview = {
-		layout = 'vertical',
-		vertical = 'up:70%'
-	    }
-	}
-    })
+    fzf().git_branches({ winopts = { preview = preview_opts } })
 end, { desc = 'View git branches' })
 
 --diagnostics
 vim.keymap.set('n', '<leader>dd', function()
-    require('fzf-lua').diagnostics_document()
+    fzf().diagnostics_document()
 end, { desc = 'View diagnostics for open buffer' })
 
 vim.keymap.set('n', '<leader>dw', function()
-    require('fzf-lua').diagnostics_workspace()
+    fzf().diagnostics_workspace()
 end, { desc = 'View diagnostics for entire project' })
 
 -- misc
 vim.keymap.set('n', '<leader>fb', function()
-    require('fzf-lua').buffers()
+    fzf().buffers()
 end, { desc = 'Browse open buffers' })
 
 vim.keymap.set('n', '<leader>fa', function()
-    require('fzf-lua').args()
+    fzf().args()
 end, { desc = 'Browse argslist' })
 
 vim.keymap.set('n', '<leader>fh', function()
-    require('fzf-lua').help_tags()
+    fzf().help_tags()
 end, { desc = 'Browse neovim\'s documentation' })
 
 
