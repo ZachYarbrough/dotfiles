@@ -63,12 +63,3 @@ vim.g.netrw_liststyle = 3
 vim.diagnostic.config({
     virtual_text = true
 })
-
--- Highlight yanked text for better visual feedback
-vim.api.nvim_create_autocmd('TextYankPost', {
-    desc = 'Highlight when yanking (copying) text',
-    group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
-    callback = function()
-	vim.highlight.on_yank()
-    end
-})

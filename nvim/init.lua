@@ -4,6 +4,7 @@ vim.g.mapleader = ' '
 -- vim configs 
 require('core.options')
 require('core.keymaps')
+require('core.autocmds')
 
 -- plugins
 vim.pack.add({
