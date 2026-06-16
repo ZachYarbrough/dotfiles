@@ -46,9 +46,12 @@ end)
 -- LSP keymaps
 vim.keymap.set('n', 'gh', vim.lsp.buf.hover, { desc = 'View quick definition' })
 
+-- Open diagnostic float on normal mode <leader>e
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
+
 -- Love2D keymaps
 vim.keymap.set('n', '<leader>vr', function()
-    vim.cmd('silent! !love .')
+    vim.fn.jobstart({"love", "."}, { detach = true })
 end)
 
 -- Plugin keymaps
