@@ -139,4 +139,3 @@ vim.keymap.set('n', '<leader>fh', function()
     fzf().help_tags()
 end, { desc = 'Browse neovim\'s documentation' })
 
-
