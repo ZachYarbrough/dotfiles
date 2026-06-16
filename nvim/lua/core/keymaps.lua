@@ -108,6 +108,10 @@ vim.keymap.set('n', '<leader>f.', function()
     fzf().files({ cwd = '~/.dotfiles' })
 end, { desc = 'Find files in dotfiles directory' })
 
+vim.keymap.set('n', '<leader>fn', function()
+    fzf().files({ cwd = '~/Documents/notes', file_ignore_patterns = { 'archived/', 'assets/' } })
+end, { desc = 'Find files in notes directory' })
+
 -- grep
 vim.keymap.set('n', '<leader>fg', function()
     fzf().live_grep(vim.tbl_extend('force', expanded_opts, {
