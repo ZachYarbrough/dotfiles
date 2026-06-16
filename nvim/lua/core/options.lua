@@ -16,6 +16,9 @@ vim.opt.winborder = "rounded"
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
+--------------------------------------
+-- LSP Configuration 
+--------------------------------------
 vim.lsp.config('lua_ls', {
     -- Root markers ensure it matches your game folders cleanly
     root_markers = { 'main.lua', '.git' },
@@ -34,7 +37,17 @@ vim.lsp.config('lua_ls', {
     }
 })
 
-vim.lsp.enable({ 'lua_ls', 'ts_ls', 'pyright' })
+vim.lsp.config('basedpyright', {
+    settings = {
+	basedpyright = {
+	    typeCheckingMode = "standard",
+	}
+    }
+})
+
+vim.lsp.enable({ 'lua_ls', 'ts_ls', 'basedpyright', 'jsonls' })
+
+--------------------------------------
 
 -- Configures the behavior of the insert mode completion menu
 vim.opt.completeopt = "menu,menuone,noselect,popup"

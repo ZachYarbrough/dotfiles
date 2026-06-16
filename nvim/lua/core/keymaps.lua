@@ -126,15 +126,6 @@ vim.keymap.set('n', '<leader>gb', function()
     fzf().git_branches({ winopts = { preview = preview_opts } })
 end, { desc = 'View git branches' })
 
---diagnostics
-vim.keymap.set('n', '<leader>dd', function()
-    fzf().diagnostics_document()
-end, { desc = 'View diagnostics for open buffer' })
-
-vim.keymap.set('n', '<leader>dw', function()
-    fzf().diagnostics_workspace()
-end, { desc = 'View diagnostics for entire project' })
-
 -- misc
 vim.keymap.set('n', '<leader>fb', function()
     fzf().buffers()

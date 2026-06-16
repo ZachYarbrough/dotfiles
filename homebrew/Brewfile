@@ -18,7 +18,8 @@ brew "fzf"
 # LSPs
 brew "lua_language_server"
 brew "typescript_language_server"
-brew "pyright"
+brew "basedpyright" # forked version of pyright, better supported
+brew "vscode-langservers-extracted" # includes jsonls, html, cssls, eslint
 
 # Casks 
 cask "iterm2"
