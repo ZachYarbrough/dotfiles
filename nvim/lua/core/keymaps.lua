@@ -87,20 +87,47 @@ local expanded_opts = {
 
 }
 
+-- files
 vim.keymap.set('n', '<leader>ff', function()
     require('fzf-lua').files()
 end, { desc = 'Find files in current project' })
 
+vim.keymap.set('n', '<leader>fo', function()
+    require('fzf-lua').oldfiles()
+end, { desc = 'Browse recently opened files' })
+
+vim.keymap.set('n', '<leader>f.', function()
+    require('fzf-lua').files({ cwd = '~/.dotfiles' })
+end, { desc = 'Find files in dotfiles directory' })
+
+-- grep
 vim.keymap.set('n', '<leader>fg', function()
     require('fzf-lua').live_grep(vim.tbl_extend('force', expanded_opts, {
 	previewer = 'builtin',
     }))
 end, { desc = 'Grep for text in current project' })
 
-vim.keymap.set('n', '<leader>fo', function()
-    require('fzf-lua').oldfiles()
-end, { desc = 'Browse recently opened files' })
+-- git
+vim.keymap.set('n', '<leader>gt', function()
+    require('fzf-lua').git_status(vim.tbl_extend('force', expanded_opts, {
+	previewer = 'git_diff',
+    }))
+end, { desc = 'View git status' })
 
+vim.keymap.set('n', '<leader>gb', function()
+    require('fzf-lua').git_branches()
+end, { desc = 'View git branches' })
+
+--diagnostics
+vim.keymap.set('n', '<leader>dd', function()
+    require('fzf-lua').diagnostics_document()
+end, { desc = 'View diagnostics for open buffer' })
+
+vim.keymap.set('n', '<leader>dw', function()
+    require('fzf-lua').diagnostics_workspace()
+end, { desc = 'View diagnostics for entire project' })
+
+-- misc
 vim.keymap.set('n', '<leader>fb', function()
     require('fzf-lua').buffers()
 end, { desc = 'Browse open buffers' })
@@ -109,16 +136,8 @@ vim.keymap.set('n', '<leader>fa', function()
     require('fzf-lua').args()
 end, { desc = 'Browse argslist' })
 
-vim.keymap.set('n', '<leader>f.', function()
-    require('fzf-lua').files({ cwd = '~/.dotfiles' })
-end, { desc = 'Find files in dotfiles directory' })
-
 vim.keymap.set('n', '<leader>fh', function()
     require('fzf-lua').help_tags()
 end, { desc = 'Browse neovim\'s documentation' })
 
-vim.keymap.set('n', '<leader>gt', function()
-    require('fzf-lua').git_status(vim.tbl_extend('force', expanded_opts, {
-	previewer = 'git_diff',
-    }))
-end, { desc = 'View git status' })
+

@@ -14,7 +14,7 @@ vim.pack.add({
 })
 
 -- color scheme
-vim.cmd.colorscheme "catppuccin-macchiato"
+vim.cmd.colorscheme 'catppuccin-macchiato'
 
 -- fzf integration
 require('fzf-lua').setup({
@@ -37,12 +37,11 @@ require('fzf-lua').setup({
 	}
     },
     fzf_colors = {
-	["pointer"] = "-1",
+	['pointer'] = '-1',
     }
 })
 
 -- git integration 
-
 local signs = {
     add          = { text = '+' },
     change       = { text = '~' },
