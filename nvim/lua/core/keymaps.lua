@@ -133,6 +133,10 @@ vim.keymap.set('n', '<leader>gb', function()
     fzf().git_branches({ winopts = { preview = preview_opts } })
 end, { desc = 'View git branches' })
 
+vim.keymap.set('n', '<leader>gc', function()
+    fzf().git_commits(expanded_opts)
+end, { desc = 'View git commits' })
+
 -- misc
 vim.keymap.set('n', '<leader>fb', function()
     fzf().buffers()
