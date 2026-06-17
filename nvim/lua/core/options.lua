@@ -5,12 +5,12 @@ vim.opt.shiftwidth = 4
 vim.opt.number = true
 vim.opt.relativenumber = true
 
-vim.cmd("filetype plugin indent on")
+vim.cmd('filetype plugin indent on')
 
 vim.opt.autoindent = true
 vim.opt.smartindent = true
 
-vim.opt.winborder = "rounded"
+vim.opt.winborder = 'rounded'
 
 -- Ignore case on search, unless typing uppercase characters 
 vim.opt.ignorecase = true
@@ -30,7 +30,7 @@ vim.lsp.config('lua_ls', {
             workspace = {
                 checkThirdParty = false,
                 library = {
-                    "${3rd}/love2d/library",
+                    '${3rd}/love2d/library',
                 },
             },
 	    telemetry = { enable = false },
@@ -41,7 +41,7 @@ vim.lsp.config('lua_ls', {
 vim.lsp.config('basedpyright', {
     settings = {
 	basedpyright = {
-	    typeCheckingMode = "standard",
+	    typeCheckingMode = 'standard',
 	}
     }
 })
@@ -51,10 +51,10 @@ vim.lsp.enable({ 'lua_ls', 'ts_ls', 'basedpyright', 'jsonls' })
 --------------------------------------
 
 -- Configures the behavior of the insert mode completion menu
-vim.opt.completeopt = "menu,menuone,noselect,popup"
+vim.opt.completeopt = 'menu,menuone,noselect,popup'
 vim.o.autocomplete = true
 -- Make omnicomplete reference the active LSP server for suggestions
-vim.opt.complete:append("o")
+vim.opt.complete:append('o')
 
 -- Netrw Explorer
 vim.g.netrw_liststyle = 3
