@@ -54,9 +54,9 @@ vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
     end,
 })
 
+-- Toggle concealment for symbols like bold (**), and inline code (```)
 local conceal_toggle = vim.api.nvim_create_augroup('markdown-conceal', { clear = true })
 
--- Toggle concealment for symbols like bold (**), and inline code (```)
 vim.api.nvim_create_autocmd('InsertEnter', {
     desc = 'Show raw markdown in insert mode',
     group = conceal_toggle,

@@ -23,3 +23,4 @@ brew "vscode-langservers-extracted" # includes jsonls, html, cssls, eslint
 
 # Casks 
 cask "iterm2"
+cask "love2d"
