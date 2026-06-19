@@ -18,6 +18,10 @@ vim.pack.add({
 -- color scheme
 vim.cmd.colorscheme 'catppuccin-macchiato'
 
+require('anchor').setup({
+    extended_excluded_dirs = { 'archived' }
+})
+
 -- fzf integration
 require('fzf-lua').setup({
     defaults = {
