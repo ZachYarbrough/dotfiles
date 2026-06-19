@@ -33,6 +33,9 @@ vim.lsp.config('lua_ls', {
                     '${3rd}/love2d/library',
                 },
             },
+	    diagnostics = {
+		globals = { 'vim' },
+	    },
 	    telemetry = { enable = false },
         }
     }

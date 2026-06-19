@@ -79,6 +79,45 @@ vim.keymap.set('n', '<leader>gn', function()
     gitsigns().next_hunk()
 end, { desc = 'Go to next hunk' })
 
+
+--------------------------------------
+-- anchor
+--------------------------------------
+local function anchor()
+    return require('anchor')
+end
+
+vim.keymap.set('n', '<leader>al', function()
+    anchor().toggle_list()
+end, { desc = 'Open anchor list' })
+
+
+
+vim.keymap.set('n', '<leader>f0', function()
+    anchor().return_to_cwd()
+end, { desc = 'Return back to cwd' })
+
+vim.keymap.set('n', '<leader>f1', function()
+    anchor().open(1)
+end, { desc = 'Open fuzzy finder for anchor 1' })
+
+vim.keymap.set('n', '<leader>f2', function()
+    anchor().open(2)
+end, { desc = 'Open fuzzy finder for anchor 2' })
+
+vim.keymap.set('n', '<leader>f3', function()
+    anchor().open(3)
+end, { desc = 'Open fuzzy finder for anchor 3' })
+
+vim.keymap.set('n', '<leader>f4', function()
+    anchor().open(4)
+end, { desc = 'Open fuzzy finder for anchor 4' })
+
+vim.keymap.set('n', '<leader>f5', function()
+    anchor().open(5)
+end, { desc = 'Open fuzzy finder for anchor 5' })
+
+
 --------------------------------------
 -- fzf-lua
 --------------------------------------
@@ -110,10 +149,6 @@ end, { desc = 'Browse recently opened files' })
 vim.keymap.set('n', '<leader>f.', function()
     fzf().files({ cwd = '~/.dotfiles' })
 end, { desc = 'Find files in dotfiles directory' })
-
-vim.keymap.set('n', '<leader>fn', function()
-    fzf().files({ cwd = '~/Documents/notes', file_ignore_patterns = { 'archived/', 'assets/' } })
-end, { desc = 'Find files in notes directory' })
 
 -- grep
 vim.keymap.set('n', '<leader>fg', function()
