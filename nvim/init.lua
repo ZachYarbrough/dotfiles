@@ -61,3 +61,6 @@ require('gitsigns').setup({
     signs = signs,
     signs_staged = signs
 })
+
+-- experimental Neovim 0.12 feature
+require('vim._core.ui2').enable()
