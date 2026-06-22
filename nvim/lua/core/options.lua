@@ -12,9 +12,14 @@ vim.opt.smartindent = true
 
 vim.opt.winborder = 'rounded'
 
--- Ignore case on search, unless typing uppercase characters 
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
+vim.opt.ignorecase = true -- Case insensitive search
+vim.opt.smartcase = true -- Case sensitive if uppercase in search
+vim.opt.hlsearch = false -- Don't highlight search results
+
+vim.opt.backup = false -- Don't create backup files
+vim.opt.writebackup = false -- Don't create backup before writing
+vim.opt.swapfile = false -- Don't create swap files
+vim.opt.undofile = true -- Persistent undo
 
 --------------------------------------
 -- LSP Configuration 
