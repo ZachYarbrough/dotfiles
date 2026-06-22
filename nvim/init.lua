@@ -16,7 +16,6 @@ vim.pack.add({
     { src = 'https://github.com/zachyarbrough/anchor.nvim' }
 })
 
--- color scheme
 vim.cmd.colorscheme 'catppuccin-macchiato'
 
 require('anchor').setup({
