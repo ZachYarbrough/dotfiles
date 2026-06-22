@@ -23,25 +23,12 @@ vim.keymap.set('n', '<leader>ad', function()
     vim.cmd('argdelete %')
 end)
 
-vim.keymap.set('n', '<leader>1', function()
-    vim.cmd('silent! 2argument')
-end)
-
-vim.keymap.set('n', '<leader>2', function()
-    vim.cmd('silent! 3argument')
-end)
-
-vim.keymap.set('n', '<leader>3', function()
-    vim.cmd('silent! 4argument')
-end)
-
-vim.keymap.set('n', '<leader>4', function()
-    vim.cmd('silent! 5argument')
-end)
-
-vim.keymap.set('n', '<leader>5', function()
-    vim.cmd('silent! 6argument')
-end)
+-- Set keymaps for argument list <leader>{1-5}
+for i = 1, 5 do
+    vim.keymap.set('n', '<leader>' .. i, function()
+	vim.cmd('silent! ' .. i + 1 .. 'argument')
+    end)
+end
 
 -- LSP keymaps
 vim.keymap.set('n', 'gh', vim.lsp.buf.hover, { desc = 'View quick definition' })
@@ -91,32 +78,20 @@ vim.keymap.set('n', '<leader>al', function()
     anchor().toggle_list()
 end, { desc = 'Open anchor list' })
 
-
+vim.keymap.set('n', '<leader>gw', function()
+    anchor().toggle_worktrees()
+end, { desc = 'Open git worktrees list' })
 
 vim.keymap.set('n', '<leader>f0', function()
     anchor().return_to_cwd()
 end, { desc = 'Return back to cwd' })
 
-vim.keymap.set('n', '<leader>f1', function()
-    anchor().open(1)
-end, { desc = 'Open fuzzy finder for anchor 1' })
-
-vim.keymap.set('n', '<leader>f2', function()
-    anchor().open(2)
-end, { desc = 'Open fuzzy finder for anchor 2' })
-
-vim.keymap.set('n', '<leader>f3', function()
-    anchor().open(3)
-end, { desc = 'Open fuzzy finder for anchor 3' })
-
-vim.keymap.set('n', '<leader>f4', function()
-    anchor().open(4)
-end, { desc = 'Open fuzzy finder for anchor 4' })
-
-vim.keymap.set('n', '<leader>f5', function()
-    anchor().open(5)
-end, { desc = 'Open fuzzy finder for anchor 5' })
-
+-- Set keymaps for <leader>f{1-5}
+for i = 1, 5 do
+    vim.keymap.set('n', '<leader>f' .. i, function()
+	anchor().open(i)
+    end, { desc = 'Open fuzzy finder for anchor ' .. i })
+end
 
 --------------------------------------
 -- fzf-lua
@@ -132,8 +107,8 @@ local preview_opts = {
 
 local expanded_opts = {
     winopts = {
-        fullscreen = true,
-        preview = preview_opts
+	fullscreen = true,
+	preview = preview_opts
     }
 }
 
