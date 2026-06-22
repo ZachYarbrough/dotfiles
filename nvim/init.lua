@@ -10,6 +10,7 @@ require('core.autocmds')
 vim.pack.add({
     { src = 'https://github.com/catppuccin/nvim', name = 'catppuccin', lazy = false, priority = 1000 },
     { src = 'https://github.com/neovim/nvim-lspconfig' },
+    { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
     { src = 'https://github.com/ibhagwan/fzf-lua' },
     { src = 'https://github.com/lewis6991/gitsigns.nvim' },
     { src = 'https://github.com/zachyarbrough/anchor.nvim' }
@@ -63,4 +64,4 @@ require('gitsigns').setup({
 })
 
 -- experimental Neovim 0.12 feature
-require('vim._core.ui2').enable()
+require('vim._core.ui2').enable({})

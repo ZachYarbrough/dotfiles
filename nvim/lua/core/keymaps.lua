@@ -31,6 +31,7 @@ for i = 1, 5 do
 end
 
 -- LSP keymaps
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to definition' })
 vim.keymap.set('n', 'gh', vim.lsp.buf.hover, { desc = 'View quick definition' })
 
 -- Open diagnostic float on normal mode <leader>e

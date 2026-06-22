@@ -37,6 +37,27 @@ vim.api.nvim_create_autocmd({ 'CmdlineLeave', 'InsertLeave' }, {
 })
 
 --------------------------------------
+-- Tree-Sitter Configuration
+--------------------------------------
+
+vim.api.nvim_create_autocmd("FileType", {
+  group = vim.api.nvim_create_augroup("NativeTreeSitterAll", { clear = true }),
+  pattern = "*", -- Matches every single file type
+  callback = function(args)
+      -- Don't open tree-sitter if file is larger than 1MB
+      local max_filesize = 1024 * 1024 -- 1 MB
+      local ok, stats = pcall(vim.uv.fs_stat, vim.api.nvim_buf_get_name(args.buf))
+
+      if ok and stats and stats.size > max_filesize then
+	  return
+      end
+
+      -- Safely run Tree-sitter for normal-sized files
+      pcall(vim.treesitter.start, args.buf)
+  end,
+})
+
+--------------------------------------
 -- Markdown Formatting 
 --------------------------------------
 -- Strike through and grey out - [-] tasks in markdown
