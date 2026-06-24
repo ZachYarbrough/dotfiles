@@ -1,7 +1,7 @@
 {
   "plugins": {
     "anchor.nvim": {
-      "rev": "83e288839832c1596661ca8b5868f6b1a43cdafb",
+      "rev": "2e2cb28642fb828787d610596eeebe4ed15602b1",
       "src": "https://github.com/zachyarbrough/anchor.nvim"
     },
     "catppuccin": {
