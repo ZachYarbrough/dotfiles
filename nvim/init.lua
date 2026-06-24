@@ -19,6 +19,18 @@ vim.pack.add({
 vim.cmd.colorscheme 'catppuccin-macchiato'
 
 require('anchor').setup({
+    picker_opts = {
+	grep = {
+	    winopts = {
+		fullscreen = true,
+		preview = {
+		    layout = 'vertical',
+		    vertical = 'up:70%'
+		}
+	    },
+	    previewer = 'builtin'
+	}
+    },
     extended_excluded_dirs = { 'archived' }
 })
 

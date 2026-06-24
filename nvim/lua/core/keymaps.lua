@@ -94,6 +94,13 @@ for i = 1, 5 do
     end, { desc = 'Open fuzzy finder for anchor ' .. i })
 end
 
+-- Set keymaps for <leader>g{1-5}
+for i = 1, 5 do
+    vim.keymap.set('n', '<leader>ag' .. i, function()
+	anchor().grep(i)
+    end, { desc = 'Open fuzzy finder live grep for anchor ' .. i })
+end
+
 --------------------------------------
 -- fzf-lua
 --------------------------------------
