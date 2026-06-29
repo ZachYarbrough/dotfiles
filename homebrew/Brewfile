@@ -14,6 +14,7 @@ brew "docker-compose"
 brew "docker-buildx"
 brew "docker"
 brew "fzf"
+brew="aria"
 
 # LSPs
 brew "lua_language_server"
